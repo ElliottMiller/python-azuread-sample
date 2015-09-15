@@ -5,6 +5,12 @@ __pycache__/
 # C extensions
 *.so
 
+# VS artifacts
+*.suo
+.nuget/Nuget.exe
+bin/
+obj/
+
 # Distribution / packaging
 .Python
 env/

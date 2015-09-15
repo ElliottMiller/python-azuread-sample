@@ -1,0 +1,13 @@
+{% if user.is_authenticated %}
+<ul class="nav navbar-nav navbar-right">
+    <li><span class="navbar-brand">Hello {{ user.username }}!</span></li>
+    <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Log off</a></li>
+</ul>
+
+{% else %}
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="{% url 'social:begin' 'azuread-oauth2' %}?next={{ request.path }}">Login with Azure AD</a></li>
+</ul>
+
+{% endif %}
